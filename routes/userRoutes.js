@@ -34,7 +34,7 @@ userRouter.post("/api/users/login", loginUser);
 
 userRouter.post("/api/users/logout", logoutUser);
 
-/******************get user details*********************/
+/******************get user details*********************/ 
 
 userRouter.get("/api/users/profile", getProfile);
 

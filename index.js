@@ -1,5 +1,4 @@
 // required config
-
 require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -17,12 +16,7 @@ const messageRouter = require("./routes/messageRoutes");
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    credentials: true,
-    origin: ["http://localhost:5173", ""],
-  })
-);
+app.use(cors());
 
 mongoose.set("strictQuery", false);
 
@@ -43,7 +37,7 @@ app.use(userRouter);
 app.use(messageRouter);
 
 const server = app.listen(PORT, () => {
-  console.log("server is running",PORT);
+  console.log("server is running", PORT);
 });
 
 const wss = new ws.WebSocketServer({ server });
